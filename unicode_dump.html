@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Unicode Dump</title>
+
+		<style type="text/css" media="all">
+			html * {margin:0; padding:0;}
+			body {font:24px/2 sans,arial,helvetica,sans-serif; background:#fff; color:#000; margin:2em;}
+			span {margin:0 1px;}
+			span:hover {cursor:pointer;}
+		</style>
+
+		<script type="text/javascript">
+
+			/**
+				* Simple Unicode character range display.
+				*
+				* Firefox, interestingly, is currently faster at rendering this page than Chrome/Chromium (using either string concat or array push, Windows or Linux).
+				*
+				* @author         Martin Latter <copysense.co.uk>
+				* @copyright      Martin Latter 21/08/2016
+				* @version        0.1
+				* @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
+				* @link           https://github.com/Tinram/utilities.git
+			*/
+
+			window.onload = function() {
+
+				var
+
+					start = 255, // (starts at 256)
+					end = 13500, // increase value to display higher characters
+
+					i = start,
+					c = 0,
+					os = "";
+
+				for (; ++i < end; c++) {
+
+					os += "<span title=" + i + ">" + String.fromCharCode(i) + "</span>";
+
+					if (c > 45) {
+						os += "<br>";
+						c = 0;
+					}
+				}
+
+				document.getElementById("content").innerHTML = os;
+
+				os = "";
+
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div id="content">
+
+		</div>
+
+	</body>
+
+</html>
