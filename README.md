@@ -7,4 +7,4 @@
 
 ### License
 
-the Utilities files are released under the [GPL v.3](https://www.gnu.org/licenses/gpl-3.0.html).
+The Utilities files are released under the [GPL v.3](https://www.gnu.org/licenses/gpl-3.0.html).

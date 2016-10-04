@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Chmod</title>
+
+		<style type="text/css" media="all">
+
+			html * {margin:0; padding:0;}
+			body {font:0.9em/1.5 sans,verdana,arial,helvetica,sans-serif; background:#fff; color:#000;}
+			div#container {margin:3em 0 0 3em;}
+			div#symbcont {margin-bottom:20px;}
+			span#symb {font:bold 1.3em "courier new",courier,monospace; letter-spacing:2px;}
+			input#octal {width:29px; border:1px solid #999; border-radius:3px; padding:1px; margin: 0 8px 0 4px; font:1em sans,verdana,helvetica,sans-serif;}
+			input::-moz-focus-inner {border:0;}
+			input[type="checkbox"] {position:relative; top:2px;}
+			input#reset {background:#eee; border:1px solid #999; border-radius:3px; padding:2px; margin-top:20px;}
+			input#reset:hover {background:#999; color:#fff; cursor:pointer;}
+			table {border:1px solid #000; border-collapse:collapse;}
+			col#c2, col#c4 {background:#eee;}
+			th {background:#333; color:#fff;}
+			td {width:64px; text-align:center; padding:3px;}
+			td.left {text-align:left;}
+			tr#spacer {height:7px;}
+
+		</style>
+
+		<script type="text/javascript">
+
+			var Chmod = {
+
+				/**
+					* Chmod.
+					*
+					* Display three different forms of the *nix chmod command (numerical and symbolic octet, checkbox matrix).
+					* Inspired by the DOM0 utility of Jeroen Vermeulen.
+					*
+					* @author         Martin Latter <copysense.co.uk>
+					* @copyright      Martin Latter 15/03/2012
+					* @version        0.3
+					* @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
+					* @link           https://github.com/Tinram/utilities.git
+				*/
+
+
+				loader: function() {
+
+					document.getElementById("octal").onkeyup = Chmod.octalCalculate;
+					document.getElementById("chmod").onsubmit = function() {
+						return false;
+					};
+					document.getElementById("chmod").onreset = function() {
+						document.getElementById("symb").innerHTML = "----------";
+					};
+
+					Chmod.setupCheckboxes();
+				},
+
+
+				setupCheckboxes: function() {
+
+					var
+						oForm = document.getElementById("chmod"),
+						oInputs = oForm.getElementsByTagName("input"),
+						i = -1,
+						n = oInputs.length;
+
+					document.getElementById("octal").value = "000";
+
+					for (; ++i < n;) {
+
+						oInputs[i].checked = false;
+
+						if (oInputs[i].type === "checkbox") {
+							oInputs[i].onclick = function() {
+								Chmod.checkboxCalculate(true);
+							};
+
+						}
+					}
+				},
+
+
+				octalCalculate: function() {
+
+					var
+						aCBMatrix = [ // checkbox matrix order, 0 to 7
+							[0, 0, 0],
+							[0, 0, 1],
+							[0, 1, 0],
+							[0, 1, 1],
+							[1, 0, 0],
+							[1, 0, 1],
+							[1, 1, 0],
+							[1, 1, 1]
+						],
+						aOct = [0, 0, 0],
+						i = -1, n = 3, iOw = 0, iGr = 0, iOt = 0, iN0 = 0, iN1 = 0, iN2 = 0,
+						sInpOct = document.getElementById("octal").value,
+						oOwner = document.getElementsByName("owner"),
+						oGroup = document.getElementsByName("group"),
+						oOther = document.getElementsByName("other");
+
+					iN0 = parseInt(sInpOct.charAt(0), 10);
+					aOct[0] = (isNaN(iN0)) ? 0 : iN0;
+					iN1 = parseInt(sInpOct.charAt(1), 10);
+					aOct[1] = (isNaN(iN1)) ? 0 : iN1;
+					iN2 = parseInt(sInpOct.charAt(2), 10);
+					aOct[2] = (isNaN(iN2)) ? 0 : iN2;
+
+					iOw = aCBMatrix[aOct[0]];
+					iGr = aCBMatrix[aOct[1]];
+					iOt = aCBMatrix[aOct[2]];
+
+					for (; ++i < n;) {
+						oOwner[i].checked = iOw[i];
+						oGroup[i].checked = iGr[i];
+						oOther[i].checked = iOt[i];
+					}
+
+					Chmod.checkboxCalculate(false);
+			},
+
+
+				checkboxCalculate: function(bTotalLine) {
+
+					var
+						aOwSym = ["-", "-", "-"],
+						aGsSym = ["-", "-", "-"],
+						aOtSym = ["-", "-", "-"],
+						aSymbols = ["r", "w", "x"],
+						aOct = [0, 0, 0],
+						i = -1,
+						n = 3,
+						oOwner = document.getElementsByName("owner"),
+						oGroup = document.getElementsByName("group"),
+						oOther = document.getElementsByName("other");
+
+					for (; ++i < n;) {
+
+						if (oOwner[i].checked) {
+							aOct[0] += parseInt(oOwner[i].value, 10);
+							aOwSym[i] = aSymbols[i];
+						}
+
+						if (oGroup[i].checked) {
+							aOct[1] += parseInt(oGroup[i].value, 10);
+							aGsSym[i] = aSymbols[i];
+						}
+
+						if (oOther[i].checked) {
+							aOct[2] += parseInt(oOther[i].value, 10);
+							aOtSym[i] = aSymbols[i];
+						}
+					}
+
+					if (bTotalLine) {
+						document.getElementById("octal").value = aOct.join("");
+					}
+
+					document.getElementById("symb").innerHTML = "-" + aOwSym.join("") + aGsSym.join("") + aOtSym.join("");
+				}
+
+			};
+
+
+			window.onload = Chmod.loader;
+
+
+			window.onunload = function() {
+				Chmod = null;
+			};
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<div id="container">
+
+			<form id="chmod">
+
+				<div id="symbcont">
+					chmod:
+					<input type="text" id="octal" maxlength="3" value="000">
+					<span id="symb">----------</span>
+				</div>
+
+				<table role="presentation">
+					<col><col id="c2"><col><col id="c4">
+					<thead>
+						<tr>
+							<th></th>
+							<th>owner</th>
+							<th>group</th>
+							<th>other</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="spacer">
+							<td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td class="left">read</td>
+							<td ><input type="checkbox" name="owner" value="4"></td>
+							<td><input type="checkbox" name="group" value="4"></td>
+							<td><input type="checkbox" name="other" value="4"></td>
+						</tr>
+						<tr>
+							<td class="left">write</td>
+							<td><input type="checkbox" name="owner" value="2"></td>
+							<td><input type="checkbox" name="group" value="2"></td>
+							<td><input type="checkbox" name="other" value="2"></td>
+						</tr>
+						<tr>
+							<td class="left">execute</td>
+							<td><input type="checkbox" name="owner" value="1"></td>
+							<td><input type="checkbox" name="group" value="1"></td>
+							<td><input type="checkbox" name="other" value="1"></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<input type="reset" id="reset" value="clear">
+
+			</form>
+
+		</div>
+
+	</body>
+
+</html>
