@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Base64 Converter</title>
+
+		<meta name="description" content="Base64 encoder and decoder.">
+		<meta name="author" content="Martin Latter">
+
+		<style type="text/css" media="all">
+
+			html * {margin:0; padding:0;}
+			body {margin:4em 0 0 4em; background:#fff; color:#000;}
+			body, input, textarea {font:0.9em sans,verdana,arial,helvetica,sans-serif;}
+			h1 {font-size:1.1em;}
+			a {text-decoration:none; color:#06c; display:block; margin:30px 0 4px 0; font-size:0.75em;}
+			a:hover {text-decoration:underline;}
+			noscript p.nstext {color:#f00; margin-bottom:20px;}
+			form#converter {width:600px;}
+			input::-moz-focus-inner {border:0;}
+			input.submitbutton {margin:0 0 10px 0; width:100px; height:25px; color:#333; background:#f7ffff; border:0; border-radius:5px; font-weight:bold; text-align:center; margin:10px 0 0 0; padding-bottom:2px; background:linear-gradient(to bottom, #f5f5f5, #999999 100%);}
+			input.submitbutton:hover {background:#000; color:#fff; cursor:pointer;}
+			textarea {display:block; padding:3px; overflow:auto; border:1px solid #999; border-radius:5px; background:#f8f8ff; height:200px; width:600px;}
+			input#decode {margin-right:40px;}
+			input#encode {margin-right:250px;}
+
+		</style>
+
+		<script type="text/javascript">
+
+			/**
+				* Base64 converter.
+				* Original 18/09/08
+				* Base64 class from http://www.webtoolkit.info/
+			*/
+
+			var Base64 = {
+
+				_keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+				encode: function(source, destination) {
+
+					var
+						input = document.getElementById(source).value,
+						output = "",
+						chr1, chr2, chr3, enc1, enc2, enc3, enc4,
+						inputLen = 0,
+						i = 0;
+
+					input = Base64._utf8_encode(input);
+					inputLen = input.length;
+
+					while (i < inputLen) {
+
+						chr1 = input.charCodeAt(i++);
+						chr2 = input.charCodeAt(i++);
+						chr3 = input.charCodeAt(i++);
+						enc1 = chr1 >> 2;
+						enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+						enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+						enc4 = chr3 & 63;
+
+						if (isNaN(chr2)) {
+							enc3 = enc4 = 64;
+						}
+						else if (isNaN(chr3)) {
+							enc4 = 64;
+						}
+
+						output = output + this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) + this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+					}
+
+					document.getElementById(destination).value = output;
+				},
+
+				decode: function(source, destination) {
+
+					var
+						input = document.getElementById(source).value,
+						output = "",
+						chr1, chr2, chr3,
+						enc1, enc2, enc3, enc4,
+						inputLen = 0,
+						i = 0;
+
+					input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+					inputLen = input.length;
+
+					while (i < inputLen) {
+
+						enc1 = this._keyStr.indexOf(input.charAt(i++));
+						enc2 = this._keyStr.indexOf(input.charAt(i++));
+						enc3 = this._keyStr.indexOf(input.charAt(i++));
+						enc4 = this._keyStr.indexOf(input.charAt(i++));
+						chr1 = (enc1 << 2) | (enc2 >> 4);
+						chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+						chr3 = ((enc3 & 3) << 6) | enc4;
+						output = output + String.fromCharCode(chr1);
+
+						if (enc3 != 64) {
+							output = output + String.fromCharCode(chr2);
+						}
+
+						if (enc4 != 64) {
+							output = output + String.fromCharCode(chr3);
+						}
+					}
+
+					output = Base64._utf8_decode(output);
+					document.getElementById(destination).value = output;
+				},
+
+				_utf8_encode: function(str) {
+
+					var
+						utftext = "",
+						strLen = 0,
+						c = 0,
+						n = 0;
+
+					str = str.replace(/\r\n/g, "\n");
+					strLen = str.length;
+
+					for (n = 0; n < strLen; n++) {
+
+						c = str.charCodeAt(n);
+
+						if (c < 128) {
+							utftext += String.fromCharCode(c);
+						}
+						else if ((c > 127) && (c < 2048)) {
+							utftext += String.fromCharCode((c >> 6) | 192);
+							utftext += String.fromCharCode((c & 63) | 128);
+						}
+						else {
+							utftext += String.fromCharCode((c >> 12) | 224);
+							utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+							utftext += String.fromCharCode((c & 63) | 128);
+						}
+					}
+
+					return utftext;
+				},
+
+				_utf8_decode: function(utftext) {
+
+					var
+						str = "",
+						i = 0, c = 0, c1 = 0, c2 = 0, c3 = 0, utftextLen = utftext.length;
+
+					while (i < utftextLen) {
+
+						c = utftext.charCodeAt(i);
+
+						if (c < 128) {
+							str += String.fromCharCode(c);
+							i++;
+						}
+						else if((c > 191) && (c < 224)) {
+							c2 = utftext.charCodeAt(i + 1);
+							str += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+							i += 2;
+						}
+						else {
+							c2 = utftext.charCodeAt(i + 1);
+							c3 = utftext.charCodeAt(i + 2);
+							str += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+							i += 3;
+						}
+					}
+
+					return str;
+				}
+			};
+
+
+			function highlight(str) {
+
+				var selection = (str == "r")? document.getElementById("resulttext") : document.getElementById("inputtext");
+				selection.focus();
+				selection.select();
+			}
+
+
+			/**
+				* Set-up event handlers on load.
+			*/
+
+			window.addEventListener('load', function() {
+
+				document.getElementById("converter").addEventListener('submit', function() {return false;}, false);
+				document.getElementById("decode").addEventListener('click', function() {Base64.decode("inputtext", "inputtext")}, false);
+				document.getElementById("encode").addEventListener('click', function() {Base64.encode("inputtext", "inputtext")}, false);
+
+				document.getElementById("toprocess").addEventListener('click', function() {highlight('t');}, false);
+
+			}, false);
+
+
+			/**
+				* Clear-up on unload.
+			*/
+
+			window.addEventListener('unload', function() {
+
+				Base64 = null;
+
+			}, false);
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<noscript>
+			<p class="nstext">Please enable JavaScript!</p>
+		</noscript>
+
+		<h1>Base64 Converter</h1>
+
+		<form id="converter">
+
+			<a href="#" id="toprocess">select</a>
+			<textarea name="inputtext" id="inputtext" cols="38" rows="6"></textarea>
+			<input type="button" id="decode" value="decode" class="submitbutton">
+			<input type="button" id="encode" value="encode" class="submitbutton">
+			<input type="reset" value="clear" class="submitbutton">
+
+		</form>
+
+	</body>
+
+</html>
