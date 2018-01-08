@@ -13,6 +13,8 @@
 
 [chmod](https://tinram.github.io/chmod.html)
 
+[entities](https://tinram.github.io/entities.html)
+
 
 ### License
 
