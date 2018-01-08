@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<title>Character Entities</title>
+
+		<meta name="author" content="Martin Latter">
+
+		<style type="text/css" media="all">
+
+			html * {margin:0; padding:0;}
+			body {margin:2em; font:0.83em/1.5 sans,verdana,arial,sans-serif; background:#fff; color:#000;}
+
+			h1 {font-size:1.4em; letter-spacing:0.1em; margin:50px 0 30px 0;}
+			h2 {font-size:1.05em; margin:15px 0 6px 0; width:70%;}
+			h3 {font-size:0.9em; margin:15px 0 6px 0;}
+
+			a, a:link, a:visited {text-decoration:none;}
+			a, a:link {color:#39f;}
+			a:visited {color:#9cacdc;}
+			a:hover {color:#2b27ff; text-decoration:underline;}
+			a:focus {outline:none;}
+			a.top {float:right;}
+
+			.smalltext, .top {font-size:0.8em; letter-spacing:0;}
+
+			div#content {margin:20px 20px 20px 50px; letter-spacing:1px;}
+			div#menustrip {margin:40px 0; padding:1px 0 0 0;}
+			div#menustrip a {border-right:1px solid #ccc; padding:0 10px 0 5px;}
+			div#menustrip a#lastitem {border:0;}
+
+			table {table-layout:fixed; width:550px; border-collapse:separate; border-spacing:1px;}
+			col.e {width:130px;}
+			col.z {width:120px;}
+			col.d {width:80px;}
+			col.v {width:270px;}
+			th {color:#333; background:#ddd; font-size:0.8em;}
+			td, th {letter-spacing:0; padding:4px;}
+			th {text-align:left;}
+			tr {background:#f0f8ff;}
+			tr.topcont {background:#fff;}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id="content">
+
+			<a id="top"></a>
+			<h1 id="title">Character Entities</h1>
+
+			<div id="menustrip" class="smalltext">
+				<a href="#standard">Standard</a>
+				<a href="#extended">Extended</a>
+				<a href="#spacing">Spacing</a>
+				<a href="#greek">Greek</a>
+				<a href="#punctuation">Punctuation</a>
+				<a href="#letter">Letter-like</a>
+				<a href="#arrows">Arrows</a>
+				<a href="#maths">Maths</a>
+				<a href="#misc">Misc</a>
+				<a href="#misc2" id="lastitem">Misc 2</a>
+			</div>
+
+<a id="standard"></a>
+<h2>Standard Characters</h2>
+<h3>Basic Latin and Latin-1 Supplement</h3>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr><th>code</th><th>name</th><th>render</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#033;</td><td>-</td><td>&#033;</td><td>exclamation mark</td></tr>
+<tr><td>&amp;#034;</td><td>&amp;quot;</td><td>&quot;</td><td>double quote</td></tr>
+<tr><td>&amp;#035;</td><td>-</td><td>&#035;</td><td>hash</td></tr>
+<tr><td>&amp;#036;</td><td>-</td><td>&#036;</td><td>dollar</td></tr>
+<tr><td>&amp;#037;</td><td>-</td><td>&#037;</td><td>percent</td></tr>
+<tr><td>&amp;#038;</td><td>&amp;amp;</td><td>&amp;</td><td>ampersand</td></tr>
+<tr><td>&amp;#039;</td><td>-</td><td>&#039;</td><td>apostrophe, single quote</td></tr>
+<tr><td>&amp;#040;</td><td>-</td><td>&#040;</td><td>left parenthesis</td></tr>
+<tr><td>&amp;#041;</td><td>-</td><td>&#041;</td><td>right parenthesis</td></tr>
+<tr><td>&amp;#042;</td><td>-</td><td>&#042;</td><td>asterisk</td></tr>
+<tr><td>&amp;#043;</td><td>-</td><td>&#043;</td><td>plus symbol</td></tr>
+<tr><td>&amp;#044;</td><td>-</td><td>&#044;</td><td>comma</td></tr>
+<tr><td>&amp;#045;</td><td>-</td><td>&#045;</td><td>hyphen</td></tr>
+<tr><td>&amp;#046;</td><td>-</td><td>&#046;</td><td>full stop, period</td></tr>
+<tr><td>&amp;#047;</td><td>-</td><td>&#047;</td><td>forward slash</td></tr>
+<tr><td>&amp;#048; - &amp;#057;</td><td>-</td><td>&nbsp;</td><td>0 to 9 digits</td></tr>
+<tr><td>&amp;#058;</td><td>-</td><td>&#058;</td><td>colon</td></tr>
+<tr><td>&amp;#059;</td><td>-</td><td>&#059;</td><td>semicolon</td></tr>
+<tr><td>&amp;#060;</td><td>&amp;lt;</td><td>&lt;</td><td>less than</td></tr>
+<tr><td>&amp;#061;</td><td>-</td><td>&#061;</td><td>equals</td></tr>
+<tr><td>&amp;#062;</td><td>&amp;gt;</td><td>&gt;</td><td>greater than</td></tr>
+<tr><td>&amp;#063;</td><td>-</td><td>&#063;</td><td>question mark</td></tr>
+<tr><td>&amp;#064;</td><td>-</td><td>&#064;</td><td>at symbol</td></tr>
+<tr><td>&amp;#065; - &amp;#090;</td><td>-</td><td>&nbsp;</td><td>uppercase A to Z characters</td></tr>
+<tr><td>&amp;#091;</td><td>-</td><td>&#091;</td><td>left square bracket</td></tr>
+<tr><td>&amp;#092;</td><td>-</td><td>&#092;</td><td>back slash</td></tr>
+<tr><td>&amp;#093;</td><td>-</td><td>&#093;</td><td>right square bracket</td></tr>
+<tr><td>&amp;#094;</td><td>-</td><td>&#094;</td><td>caret</td></tr>
+<tr><td>&amp;#095;</td><td>-</td><td>&#095;</td><td>underscore</td></tr>
+<tr><td>&amp;#096;</td><td>-</td><td>&#096;</td><td>grave accent</td></tr>
+<tr><td>&amp;#097; - &amp;#122;</td><td>-</td><td>&nbsp;</td><td>lowercase a to z characters</td></tr>
+<tr><td>&amp;#123;</td><td>-</td><td>&#123;</td><td>left curly brace</td></tr>
+<tr><td>&amp;#124;</td><td>-</td><td>&#124;</td><td>vertical bar</td></tr>
+<tr><td>&amp;#125;</td><td>-</td><td>&#125;</td><td>right curly brace</td></tr>
+<tr><td>&amp;#126;</td><td>-</td><td>&#126;</td><td>tilde</td></tr>
+<tr><td>&amp;#128;</td><td>-</td><td>&#128;</td><td>Euro symbol <small>(<a href="#euro">non-standard</a>)</small></td></tr>
+<tr><td>&amp;#130;</td><td>-</td><td>&#130;</td><td>low left quote</td></tr>
+<tr><td>&amp;#131;</td><td>-</td><td>&#131;</td><td>small f with hook</td></tr>
+<tr><td>&amp;#132;</td><td>-</td><td>&#132;</td><td>low left double quote</td></tr>
+<tr><td>&amp;#133;</td><td>-</td><td>&#133;</td><td>ellipsis</td></tr>
+<tr><td>&amp;#134;</td><td>-</td><td>&#134;</td><td>dagger</td></tr>
+<tr><td>&amp;#135;</td><td>-</td><td>&#135;</td><td>double dagger</td></tr>
+<tr><td>&amp;#136;</td><td>-</td><td>&#136;</td><td>circumflex</td></tr>
+<tr><td>&amp;#137;</td><td>-</td><td>&#137;</td><td>per mille</td></tr>
+<tr><td>&amp;#138;</td><td>-</td><td>&#138;</td><td>capital S, caron</td></tr>
+<tr><td>&amp;#139;</td><td>-</td><td>&#139;</td><td>less than (small)</td></tr>
+<tr><td>&amp;#140;</td><td>-</td><td>&#140;</td><td>capital OE ligature</td></tr>
+<tr><td>&amp;#142;</td><td>-</td><td>&#142;</td><td>capital Z, caron</td></tr>
+<tr><td>&amp;#145;</td><td>-</td><td>&#145;</td><td>left single curly quote</td></tr>
+<tr><td>&amp;#146;</td><td>-</td><td>&#146;</td><td>right single curly quote</td></tr>
+<tr><td>&amp;#147;</td><td>-</td><td>&#147;</td><td>left double curly quote</td></tr>
+<tr><td>&amp;#148;</td><td>-</td><td>&#148;</td><td>right double curly quote</td></tr>
+<tr><td>&amp;#149;</td><td>-</td><td>&#149;</td><td>bullet</td></tr>
+<tr><td>&amp;#150;</td><td>-</td><td>&#150;</td><td>en dash</td></tr>
+<tr><td>&amp;#151;</td><td>-</td><td>&#151;</td><td>em dash</td></tr>
+<tr><td>&amp;#152;</td><td>-</td><td>&#152;</td><td>tilde</td></tr>
+<tr><td>&amp;#153;</td><td>-</td><td>&#153;</td><td>trademark</td></tr>
+<tr><td>&amp;#154;</td><td>-</td><td>&#154;</td><td>small s, caron</td></tr>
+<tr><td>&amp;#155;</td><td>-</td><td>&#155;</td><td>greater than (small)</td></tr>
+<tr><td>&amp;#156;</td><td>-</td><td>&#156;</td><td>small oe ligature</td></tr>
+<tr><td>&amp;#158;</td><td>-</td><td>&#158;</td><td>small z, caron</td></tr>
+<tr><td>&amp;#159;</td><td>-</td><td>&#159;</td><td>umlauted capital Y</td></tr>
+<tr><td>&amp;#160;</td><td>&amp;nbsp;</td><td>&nbsp;</td><td>non-breaking space</td></tr>
+<tr><td>&amp;#161;</td><td>&amp;iexcl;</td><td>&iexcl;</td><td>inverted exclamation mark</td></tr>
+<tr><td>&amp;#162;</td><td>&amp;cent;</td><td>&cent;</td><td>cent symbol</td></tr>
+<tr><td>&amp;#163;</td><td>&amp;pound;</td><td>&pound;</td><td>pound symbol</td></tr>
+<tr><td>&amp;#164;</td><td>&amp;curren;</td><td>&curren;</td><td>general currency symbol</td></tr>
+<tr><td>&amp;#165;</td><td>&amp;yen;</td><td>&yen;</td><td>Yen symbol</td></tr>
+<tr><td>&amp;#166;</td><td>&amp;brvbar;</td><td>&brvbar;</td><td>split vertical bar</td></tr>
+<tr><td>&amp;#167;</td><td>&amp;sect;</td><td>&sect;</td><td>section sign</td></tr>
+<tr><td>&amp;#168;</td><td>&amp;uml;</td><td>&uml;</td><td>umlaut</td></tr>
+<tr><td>&amp;#169;</td><td>&amp;copy;</td><td>&copy;</td><td>copyright symbol</td></tr>
+<tr><td>&amp;#170;</td><td>&amp;ordf;</td><td>&ordf;</td><td>feminine ordinal</td></tr>
+<tr><td>&amp;#171;</td><td>&amp;laquo;</td><td>&laquo;</td><td>left angle quote</td></tr>
+<tr><td>&amp;#172;</td><td>&amp;not;</td><td>&not;</td><td>not sign</td></tr>
+<tr><td>&amp;#173;</td><td>&amp;shy;</td><td>&shy;</td><td>soft hyphen</td></tr>
+<tr><td>&amp;#174;</td><td>&amp;reg;</td><td>&reg;</td><td>registered trademark</td></tr>
+<tr><td>&amp;#175;</td><td>&amp;macr;</td><td>&macr;</td><td>macron accent</td></tr>
+<tr><td>&amp;#176;</td><td>&amp;deg;</td><td>&deg;</td><td>degree symbol</td></tr>
+<tr><td>&amp;#177;</td><td>&amp;plusmn;</td><td>&plusmn;</td><td>plus/minus symbol</td></tr>
+<tr><td>&amp;#178;</td><td>&amp;sup2;</td><td>&sup2;</td><td>superscript 2</td></tr>
+<tr><td>&amp;#179;</td><td>&amp;sup3;</td><td>&sup3;</td><td>superscript 3</td></tr>
+<tr><td>&amp;#180;</td><td>&amp;acute;</td><td>&acute;</td><td>acute accent</td></tr>
+<tr><td>&amp;#181;</td><td>&amp;micro</td><td>&micro;</td><td>micron, mu</td></tr>
+<tr><td>&amp;#182;</td><td>&amp;para;</td><td>&para;</td><td>pararaph symbol</td></tr>
+<tr><td>&amp;#183;</td><td>&amp;middot;</td><td>&middot;</td><td>middle dot</td></tr>
+<tr><td>&amp;#184;</td><td>&amp;cedil;</td><td>&cedil;</td><td>cedilla</td></tr>
+<tr><td>&amp;#185;</td><td>&amp;sup1;</td><td>&sup1;</td><td>superscript 1</td></tr>
+<tr><td>&amp;#186;</td><td>&amp;ordm;</td><td>&ordm;</td><td>masculine ordinal</td></tr>
+<tr><td>&amp;#187;</td><td>&amp;raquo;</td><td>&raquo;</td><td>right angle quote</td></tr>
+<tr><td>&amp;#188;</td><td>&amp;frac14;</td><td>&frac14;</td><td>fraction one-quarter</td></tr>
+<tr><td>&amp;#189;</td><td>&amp;frac12;</td><td>&frac12;</td><td>fraction one-half</td></tr>
+<tr><td>&amp;#190;</td><td>&amp;frac34;</td><td>&frac34;</td><td>fraction three-quarters</td></tr>
+<tr><td>&amp;#191;</td><td>&amp;iquest;</td><td>&iquest;</td><td>inverted question mark</td></tr>
+<tr><td>&amp;#192;</td><td>&amp;Agrave;</td><td>&Agrave;</td><td>capital A, grave accent</td></tr>
+<tr><td>&amp;#193;</td><td>&amp;Aacute;</td><td>&Aacute;</td><td>capital A, acute accent</td></tr>
+<tr><td>&amp;#194;</td><td>&amp;Acirc;</td><td>&Acirc;</td><td>capital A, circumflex accent</td></tr>
+<tr><td>&amp;#195;</td><td>&amp;Atilde;</td><td>&Atilde;</td><td>capital A, tilde accent</td></tr>
+<tr><td>&amp;#196;</td><td>&amp;Auml;</td><td>&Auml;</td><td>capital A, umlaut</td></tr>
+<tr><td>&amp;#197;</td><td>&amp;ARing</td><td>&Aring;</td><td>capital A, ring</td></tr>
+<tr><td>&amp;#198;</td><td>&amp;AElig;</td><td>&AElig;</td><td>capital AE ligature</td></tr>
+<tr><td>&amp;#199;</td><td>&amp;Ccedil;</td><td>&Ccedil;</td><td>capital C, cedilla</td></tr>
+<tr><td>&amp;#200;</td><td>&amp;Egrave;</td><td>&Egrave;</td><td>capital E, grave accent</td></tr>
+<tr><td>&amp;#201;</td><td>&amp;Eacute;</td><td>&Eacute;</td><td>capital E, acute accent</td></tr>
+<tr><td>&amp;#202;</td><td>&amp;Ecirc;</td><td>&Ecirc;</td><td>capital E, circumflex accent</td></tr>
+<tr><td>&amp;#203;</td><td>&amp;Euml;</td><td>&Euml;</td><td>capital E, umlaut</td></tr>
+<tr><td>&amp;#204;</td><td>&amp;Igrave;</td><td>&Igrave;</td><td>capital I, grave accent</td></tr>
+<tr><td>&amp;#205;</td><td>&amp;Iacute;</td><td>&Iacute;</td><td>capital I, accute accent</td></tr>
+<tr><td>&amp;#206;</td><td>&amp;Icirc;</td><td>&Icirc;</td><td>capital I, circumflex accent</td></tr>
+<tr><td>&amp;#207;</td><td>&amp;Iuml;</td><td>&Iuml;</td><td>capital I, umlaut</td></tr>
+<tr><td>&amp;#208;</td><td>&amp;ETH;</td><td>&ETH;</td><td>capital Eth, Icelandic</td></tr>
+<tr><td>&amp;#209;</td><td>&amp;Ntilde;</td><td>&Ntilde;</td><td>capital N, tilde</td></tr>
+<tr><td>&amp;#210;</td><td>&amp;Ograve;</td><td>&Ograve;</td><td>capital O, grave accent</td></tr>
+<tr><td>&amp;#211;</td><td>&amp;Oacute;</td><td>&Oacute;</td><td>capital O, accute accent</td></tr>
+<tr><td>&amp;#212;</td><td>&amp;Ocirc;</td><td>&Ocirc;</td><td>capital O, circumflex accent</td></tr>
+<tr><td>&amp;#213;</td><td>&amp;Otilde;</td><td>&Otilde;</td><td>capital O, tilde accent</td></tr>
+<tr><td>&amp;#214;</td><td>&amp;Ouml;</td><td>&Ouml;</td><td>capital O, umlaut</td></tr>
+<tr><td>&amp;#215;</td><td>&amp;times;</td><td>&times;</td><td>multiplication symbol</td></tr>
+<tr><td>&amp;#216;</td><td>&amp;Oslash;</td><td>&Oslash;</td><td>capital O, slash</td></tr>
+<tr><td>&amp;#217;</td><td>&amp;Ugrave;</td><td>&Ugrave;</td><td>capital U, grave accent</td></tr>
+<tr><td>&amp;#218;</td><td>&amp;Uacute;</td><td>&Uacute;</td><td>capital U, acute accent</td></tr>
+<tr><td>&amp;#219;</td><td>&amp;Ucirc;</td><td>&Ucirc;</td><td>capital U, circumflex</td></tr>
+<tr><td>&amp;#220;</td><td>&amp;Uuml;</td><td>&Uuml;</td><td>capital U, umlaut</td></tr>
+<tr><td>&amp;#221;</td><td>&amp;Yacute;</td><td>&Yacute;</td><td>capital Y, acute accent</td></tr>
+<tr><td>&amp;#222;</td><td>&amp;THORN;</td><td>&THORN;</td><td>capital Thorn, Icelandic</td></tr>
+<tr><td>&amp;#223;</td><td>&amp;szlig;</td><td>&szlig;</td><td>small sz ligature</td></tr>
+<tr><td>&amp;#224;</td><td>&amp;agrave;</td><td>&agrave;</td><td>small a, grave accent</td></tr>
+<tr><td>&amp;#225;</td><td>&amp;aacute;</td><td>&aacute;</td><td>small a, acute accent</td></tr>
+<tr><td>&amp;#226;</td><td>&amp;acirc;</td><td>&acirc;</td><td>small a, circumflex accent</td></tr>
+<tr><td>&amp;#227;</td><td>&amp;atilde;</td><td>&atilde;</td><td>small a, tilde</td></tr>
+<tr><td>&amp;#228;</td><td>&amp;auml;</td><td>&auml;</td><td>small a, umlaut</td></tr>
+<tr><td>&amp;#229;</td><td>&amp;aring;</td><td>&aring;</td><td>small a, ring</td></tr>
+<tr><td>&amp;#230;</td><td>&amp;aelig;</td><td>&aelig;</td><td>small ae ligature</td></tr>
+<tr><td>&amp;#231;</td><td>&amp;ccedil;</td><td>&ccedil;</td><td>small c, cedilla</td></tr>
+<tr><td>&amp;#232;</td><td>&amp;egrave;</td><td>&egrave;</td><td>small e, grave accent</td></tr>
+<tr><td>&amp;#233;</td><td>&amp;eacute;</td><td>&eacute;</td><td>small e, acute accent</td></tr>
+<tr><td>&amp;#234;</td><td>&amp;ecirc;</td><td>&ecirc;</td><td>small e, circumflex accent</td></tr>
+<tr><td>&amp;#235;</td><td>&amp;euml;</td><td>&euml;</td><td>small e, umlaut</td></tr>
+<tr><td>&amp;#236;</td><td>&amp;igrave;</td><td>&igrave;</td><td>small i, grave accent</td></tr>
+<tr><td>&amp;#237;</td><td>&amp;iacute;</td><td>&iacute;</td><td>small i, acute accent</td></tr>
+<tr><td>&amp;#238;</td><td>&amp;icirc;</td><td>&icirc;</td><td>small i, circumflex accent</td></tr>
+<tr><td>&amp;#239;</td><td>&amp;iuml;</td><td>&iuml;</td><td>small i, umlaut</td></tr>
+<tr><td>&amp;#240;</td><td>&amp;eth;</td><td>&eth;</td><td>small eth, Icelandic</td></tr>
+<tr><td>&amp;#241;</td><td>&amp;ntilde;</td><td>&ntilde;</td><td>small n, tilde</td></tr>
+<tr><td>&amp;#242;</td><td>&amp;ograve;</td><td>&ograve;</td><td>small o, grave accent</td></tr>
+<tr><td>&amp;#243;</td><td>&amp;oacute;</td><td>&oacute;</td><td>small o, acute accent</td></tr>
+<tr><td>&amp;#244;</td><td>&amp;ocirc;</td><td>&ocirc;</td><td>small o, circumflex accent</td></tr>
+<tr><td>&amp;#245;</td><td>&amp;otilde;</td><td>&otilde;</td><td>small o, tilde</td></tr>
+<tr><td>&amp;#246;</td><td>&amp;ouml;</td><td>&ouml;</td><td>small o, umlaut</td></tr>
+<tr><td>&amp;#247;</td><td>&amp;divide;</td><td>&divide;</td><td>division symbol</td></tr>
+<tr><td>&amp;#248;</td><td>&amp;oslash;</td><td>&oslash;</td><td>small o, slash</td></tr>
+<tr><td>&amp;#249;</td><td>&amp;ugrave;</td><td>&ugrave;</td><td>small u, grave accent</td></tr>
+<tr><td>&amp;#250;</td><td>&amp;uacute;</td><td>&uacute;</td><td>small u, accute accent</td></tr>
+<tr><td>&amp;#251;</td><td>&amp;ucirc;</td><td>&ucirc;</td><td>small u, circumflex accent</td></tr>
+<tr><td>&amp;#252;</td><td>&amp;uuml;</td><td>&uuml;</td><td>small u, umlaut</td></tr>
+<tr><td>&amp;#253;</td><td>&amp;yacute;</td><td>&yacute;</td><td>small y, acute accent</td></tr>
+<tr><td>&amp;#254;</td><td>&amp;thorn;</td><td>&thorn;</td><td>small thorn, Icelandic</td></tr>
+<tr><td>&amp;#255;</td><td>&amp;yuml;</td><td>&yuml;</td><td>small y, umlaut</td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+<a id="extended"></a><h2>'Extended' Characters</h2>
+<h3>Latin Extended A and B</h3>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr><th>code</th><th>name</th><th>render</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#338;</td><td>&amp;OElig;</td><td>&OElig;</td><td>capital OE ligature</td></tr>
+<tr><td>&amp;#339;</td><td>&amp;oelig;</td><td>&oelig;</td><td>small oe ligature</td></tr>
+<tr><td>&amp;#352;</td><td>&amp;Scaron;</td><td>&Scaron;</td><td>capital S, caron</td></tr>
+<tr><td>&amp;#353;</td><td>&amp;scaron;</td><td>&scaron;</td><td>small s, caron</td></tr>
+<tr><td>&amp;#376;</td><td>&amp;Yuml;</td><td>&Yuml;</td><td>capital Y, umlaut</td></tr>
+<tr><td>&amp;#402;</td><td>&amp;fnof;</td><td>&fnof;</td><td>small f with hook</td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+<a id="spacing"></a><h2>Spacing Modifier Letters</h2>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr><th>code</th><th>name</th><th>render</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#710;</td><td>&amp;circ;</td><td>&circ;</td><td>circumflex accent</td></tr>
+<tr><td>&amp;#732;</td><td>&amp;tilde;</td><td>&tilde;</td><td>tilde</td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+<a id="greek"></a><h2>Greek Characters</h2>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr><th>code</th><th>name</th><th>render</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#913;</td><td>&amp;Alpha;</td><td>&Alpha;</td><td>capital Alpha</td></tr>
+<tr><td>&amp;#914;</td><td>&amp;Beta;</td><td>&Beta;</td><td>capital Beta</td></tr>
+<tr><td>&amp;#915;</td><td>&amp;Gamma;</td><td>&Gamma;</td><td>capital Gamma</td></tr>
+<tr><td>&amp;#916;</td><td>&amp;Delta;</td><td>&Delta;</td><td>capital Delta</td></tr>
+<tr><td>&amp;#917;</td><td>&amp;Epsilon;</td><td>&Epsilon;</td><td>capital Epsilon</td></tr>
+<tr><td>&amp;#918;</td><td>&amp;Zeta;</td><td>&Zeta;</td><td>capital Zeta</td></tr>
+<tr><td>&amp;#919;</td><td>&amp;Eta;</td><td>&Eta;</td><td>capital Eta</td></tr>
+<tr><td>&amp;#920;</td><td>&amp;Theta;</td><td>&Theta;</td><td>capital Theta</td></tr>
+<tr><td>&amp;#921;</td><td>&amp;Iota;</td><td>&Iota;</td><td>capital Iota</td></tr>
+<tr><td>&amp;#922;</td><td>&amp;Kappa;</td><td>&Kappa;</td><td>capital Kappa</td></tr>
+<tr><td>&amp;#923;</td><td>&amp;Lambda;</td><td>&Lambda;</td><td>capital Lambda</td></tr>
+<tr><td>&amp;#924;</td><td>&amp;Mu;</td><td>&Mu;</td><td>capital Mu</td></tr>
+<tr><td>&amp;#925;</td><td>&amp;Nu;</td><td>&Nu;</td><td>capital Nu</td></tr>
+<tr><td>&amp;#926;</td><td>&amp;Xi;</td><td>&Xi;</td><td>capital Xi</td></tr>
+<tr><td>&amp;#927;</td><td>&amp;Omicron;</td><td>&Omicron;</td><td>capital Omicron</td></tr>
+<tr><td>&amp;#928;</td><td>&amp;Pi;</td><td>&Pi;</td><td>capital Pi</td></tr>
+<tr><td>&amp;#929;</td><td>&amp;Rho;</td><td>&Rho;</td><td>capital Rho</td></tr>
+<tr><td>&amp;#931;</td><td>&amp;Sigma;</td><td>&Sigma;</td><td>capital Sigma</td></tr>
+<tr><td>&amp;#932;</td><td>&amp;Tau;</td><td>&Tau;</td><td>capital Tau</td></tr>
+<tr><td>&amp;#933;</td><td>&amp;Upsilon;</td><td>&Upsilon;</td><td>capital Upsilon</td></tr>
+<tr><td>&amp;#934;</td><td>&amp;Phi;</td><td>&Phi;</td><td>capital Phi</td></tr>
+<tr><td>&amp;#935;</td><td>&amp;Chi;</td><td>&Chi;</td><td>capital Chi</td></tr>
+<tr><td>&amp;#936;</td><td>&amp;Psi;</td><td>&Psi;</td><td>capital Psi</td></tr>
+<tr><td>&amp;#937;</td><td>&amp;Omega;</td><td>&Omega;</td><td>small omega</td></tr>
+<tr><td>&amp;#945;</td><td>&amp;alpha;</td><td>&alpha;</td><td> small alpha</td></tr>
+<tr><td>&amp;#946;</td><td>&amp;beta;</td><td>&beta;</td><td>small beta</td></tr>
+<tr><td>&amp;#947;</td><td>&amp;gamma;</td><td>&gamma;</td><td>small gamma</td></tr>
+<tr><td>&amp;#948;</td><td>&amp;delta;</td><td>&delta;</td><td>small delta</td></tr>
+<tr><td>&amp;#949;</td><td>&amp;epsilon;</td><td>&epsilon;</td><td>small epsilon</td></tr>
+<tr><td>&amp;#950;</td><td>&amp;zeta;</td><td>&zeta;</td><td>small zeta</td></tr>
+<tr><td>&amp;#951;</td><td>&amp;eta;</td><td>&eta;</td><td>small eta</td></tr>
+<tr><td>&amp;#952;</td><td>&amp;theta;</td><td>&theta;</td><td>small theta</td></tr>
+<tr><td>&amp;#953;</td><td>&amp;iota;</td><td>&iota;</td><td>small iota</td></tr>
+<tr><td>&amp;#954;</td><td>&amp;kappa;</td><td>&kappa;</td><td>small kappa</td></tr>
+<tr><td>&amp;#955;</td><td>&amp;lambda;</td><td>&lambda;</td><td>small lambda</td></tr>
+<tr><td>&amp;#956;</td><td>&amp;mu;</td><td>&mu;</td><td>small mu</td></tr>
+<tr><td>&amp;#957;</td><td>&amp;nu;</td><td>&nu;</td><td>small nu</td></tr>
+<tr><td>&amp;#958;</td><td>&amp;xi;</td><td>&xi;</td><td>small xi</td></tr>
+<tr><td>&amp;#959;</td><td>&amp;omicron;</td><td>&omicron;</td><td>small omicron</td></tr>
+<tr><td>&amp;#960;</td><td>&amp;pi;</td><td>&pi;</td><td>small pi</td></tr>
+<tr><td>&amp;#961;</td><td>&amp;rho;</td><td>&rho;</td><td>small rho</td></tr>
+<tr><td>&amp;#962;</td><td>&amp;sigmaf;</td><td>&sigmaf;</td><td>small final sigma</td></tr>
+<tr><td>&amp;#963;</td><td>&amp;sigma;</td><td>&sigma;</td><td>small sigma</td></tr>
+<tr><td>&amp;#964;</td><td>&amp;tau;</td><td>&tau;</td><td>small tau</td></tr>
+<tr><td>&amp;#965;</td><td>&amp;upsilon;</td><td>&upsilon;</td><td>small upsilon</td></tr>
+<tr><td>&amp;#966;</td><td>&amp;phi;</td><td>&phi;</td><td>small phi</td></tr>
+<tr><td>&amp;#967;</td><td>&amp;chi;</td><td>&chi;</td><td>small chi</td></tr>
+<tr><td>&amp;#968;</td><td>&amp;psi;</td><td>&psi;</td><td>small psi</td></tr>
+<tr><td>&amp;#969;</td><td>&amp;omega;</td><td>&omega;</td><td>small omega</td></tr>
+<tr><td>&amp;#977;</td><td>&amp;thetasym;</td><td>&thetasym;</td><td>small theta</td></tr>
+<tr><td>&amp;#978;</td><td>&amp;upsih;</td><td>&upsih;</td><td>upsilon with hook</td></tr>
+<tr><td>&amp;#982;</td><td>&amp;piv;</td><td>&piv;</td><td>pi symbol</td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+<a id="punctuation"></a><h2>General Puctuation</h2>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr><th>code</th><th>name</th><th>render</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#8194;</td><td>&amp;ensp;</td><td>&ensp;</td><td>en space</td></tr>
+<tr><td>&amp;#8195;</td><td>&amp;emsp;</td><td>&emsp;</td><td>em space</td></tr>
+<tr><td>&amp;#8201;</td><td>&amp;thinsp;</td><td>&thinsp;</td><td>thin space</td></tr>
+<tr><td>&amp;#8204;</td><td>&amp;zwnj;</td><td>&zwnj;</td><td>zero-width non-joiner</td></tr>
+<tr><td>&amp;#8205;</td><td>&amp;zwj;</td><td>&zwj;</td><td>zero-width joiner</td></tr>
+<tr><td>&amp;#8206;</td><td>&amp;lrm</td><td>&lrm;</td><td>left-to-right mark</td></tr>
+<tr><td>&amp;#8207;</td><td>&amp;rlm;</td><td>&rlm;</td><td>right-to-left mark</td></tr>
+<tr><td>&amp;#8211;</td><td>&amp;ndash;</td><td>&ndash;</td><td>en dash</td></tr>
+<tr><td>&amp;#8212;</td><td>&amp;mdash;</td><td>&mdash;</td><td>em dash</td></tr>
+<tr><td>&amp;#8216;</td><td>&amp;lsquo;</td><td>&lsquo;</td><td>left single quotation mark</td></tr>
+<tr><td>&amp;#8217;</td><td>&amp;rsquo;</td><td>&rsquo;</td><td>right single quotation mark</td></tr>
+<tr><td>&amp;#8218;</td><td>&amp;sbquo;</td><td>&sbquo;</td><td>single low-9 quotation mark</td></tr>
+<tr><td>&amp;#8220;</td><td>&amp;ldquo;</td><td>&ldquo;</td><td>left double quotation mark</td></tr>
+<tr><td>&amp;#8221;</td><td>&amp;rdquo;</td><td>&rdquo;</td><td>right double quotation mark</td></tr>
+<tr><td>&amp;#8222;</td><td>&amp;bdquo;</td><td>&bdquo;</td><td>double low-9 quotation mark</td></tr>
+<tr><td>&amp;#8224;</td><td>&amp;dagger;</td><td>&dagger;</td><td>dagger</td></tr>
+<tr><td>&amp;#8225;</td><td>&amp;Dagger;</td><td>&Dagger;</td><td>double dagger</td></tr>
+<tr><td>&amp;#8226;</td><td>&amp;bull;</td><td>&bull;</td><td>bullet</td></tr>
+<tr><td>&amp;#8230;</td><td>&amp;hellip;</td><td>&hellip;</td><td>ellipses</td></tr>
+<tr><td>&amp;#8240;</td><td>&amp;permil;</td><td>&permil;</td><td>per mille symbol</td></tr>
+<tr><td>&amp;#8242;</td><td>&amp;prime;</td><td>&prime;</td><td>prime, minutes, feet</td></tr>
+<tr><td>&amp;#8243;</td><td>&amp;Prime;</td><td>&Prime;</td><td>double prime, seconds, feet</td></tr>
+<tr><td>&amp;#8249;</td><td>&amp;lsaquo;</td><td>&lsaquo;</td><td>left angle quotation</td></tr>
+<tr><td>&amp;#8250;</td><td>&amp;rsaquo;</td><td>&rsaquo;</td><td>right angle quotation</td></tr>
+<tr><td>&amp;#8254;</td><td>&amp;oline;</td><td>&oline;</td><td>overline</td></tr>
+<tr><td>&amp;#8260;</td><td>&amp;frasl;</td><td>&frasl;</td><td>fraction dash</td></tr>
+<tr><td><a id="euro"></a>&amp;#8364;</td><td>&amp;euro;</td><td>&euro;</td><td>Euro symbol <small>(standard)</small></td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+<a id="letter"></a><h2>Letter-like Symbols</h2>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr><th>code</th><th>name</th><th>render</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#8472;</td><td>&amp;weierp;</td><td>&weierp;</td><td>script capital P, power set</td></tr>
+<tr><td>&amp;#8465;</td><td>&amp;image;</td><td>&image;</td><td>blackletter capital I, imaginary part</td></tr>
+<tr><td>&amp;#8476;</td><td>&amp;real;</td><td>&real;</td><td>blackletter capital R, real part</td></tr>
+<tr><td>&amp;#8482;</td><td>&amp;trade;</td><td>&trade;</td><td>trademark symbol</td></tr>
+<tr><td>&amp;#8501;</td><td>&amp;alefsym;</td><td>&alefsym;</td><td>alef symbol, or first transfinite cardinal</td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+<a id="arrows"></a><h2>Arrows</h2>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr><th>code</th><th>name</th><th>render</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#8592;</td><td>&amp;larr;</td><td>&larr;</td><td>left arrow</td></tr>
+<tr><td>&amp;#8593;</td><td>&amp;uarr;</td><td>&uarr;</td><td>up arrow</td></tr>
+<tr><td>&amp;#8594;</td><td>&amp;rarr;</td><td>&rarr;</td><td>right arrow</td></tr>
+<tr><td>&amp;#8595;</td><td>&amp;darr;</td><td>&darr;</td><td>down arrow</td></tr>
+<tr><td>&amp;#8596;</td><td>&amp;harr;</td><td>&harr;</td><td>left-right arrow</td></tr>
+<tr><td>&amp;#8629;</td><td>&amp;crarr;</td><td>&crarr;</td><td>down-left arrow</td></tr>
+<tr><td>&amp;#8656;</td><td>&amp;lArr;</td><td>&lArr;</td><td>left double arrow</td></tr>
+<tr><td>&amp;#8657;</td><td>&amp;uArr;</td><td>&uArr;</td><td>upwards double arrow</td></tr>
+<tr><td>&amp;#8658;</td><td>&amp;rArr;</td><td>&rArr;</td><td>right double arrow</td></tr>
+<tr><td>&amp;#8659;</td><td>&amp;dArr;</td><td>&dArr;</td><td>downwards double arrow</td></tr>
+<tr><td>&amp;#8660;</td><td>&amp;hArr;</td><td>&hArr;</td><td>left-right double arrow</td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+<a id="maths"></a><h2>Mathematical Symbols</h2>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr>
+<th>code</th><th>name</th><th>render</th><th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>&amp;#8704;</td><td>&amp;forall;</td><td>&forall;</td><td>for all</td></tr>
+<tr><td>&amp;#8706;</td><td>&amp;part;</td><td>&part;</td><td>partial differential</td></tr>
+<tr><td>&amp;#8707;</td><td>&amp;exist;</td><td>&exist;</td><td>there exists</td></tr>
+<tr><td>&amp;#8709;</td><td>&amp;empty;</td><td>&empty;</td><td>empty set, diameter</td></tr>
+<tr><td>&amp;#8711;</td><td>&amp;nabla;</td><td>&nabla;</td><td>nabla, backward difference</td></tr>
+<tr><td>&amp;#8712;</td><td>&amp;isin;</td><td>&isin;</td><td>element of</td></tr>
+<tr><td>&amp;#8713;</td><td>&amp;notin;</td><td>&notin;</td><td>not an element of</td></tr>
+<tr><td>&amp;#8715;</td><td>&amp;ni;</td><td>&ni;</td><td>contains as a member</td></tr>
+<tr><td>&amp;#8719;</td><td>&amp;prod;</td><td>&prod;</td><td>n-ary product, product sign</td></tr>
+<tr><td>&amp;#8721;</td><td>&amp;sum;</td><td>&sum;</td><td>n-ary summation</td></tr>
+<tr><td>&amp;#8722;</td><td>&amp;minus;</td><td>&minus;</td><td>minus symbol</td></tr>
+<tr><td>&amp;#8727;</td><td>&amp;lowast;</td><td>&lowast;</td><td>asterisk operator</td></tr>
+<tr><td>&amp;#8730;</td><td>&amp;radic;</td><td>&radic;</td><td>square root, radical sign</td></tr>
+<tr><td>&amp;#8733;</td><td>&amp;prop;</td><td>&prop;</td><td>proportional</td></tr>
+<tr><td>&amp;#8734;</td><td>&amp;infin;</td><td>&infin;</td><td>infinity symbol</td></tr>
+<tr><td>&amp;#8736;</td><td>&amp;ang;</td><td>&ang;</td><td>angle</td></tr>
+<tr><td>&amp;#8743;</td><td>&amp;and;</td><td>&and;</td><td>logical and, wedge</td></tr>
+<tr><td>&amp;#8744;</td><td>&amp;or;</td><td>&or;</td><td>logical or, vee</td></tr>
+<tr><td>&amp;#8745;</td><td>&amp;cap;</td><td>&cap;</td><td>intersection, cap</td></tr>
+<tr><td>&amp;#8746;</td><td>&amp;cup;</td><td>&cup;</td><td>union, cup</td></tr>
+<tr><td>&amp;#8747;</td><td>&amp;int;</td><td>&int;</td><td>integral</td></tr>
+<tr><td>&amp;#8756;</td><td>&amp;there4;</td><td>&there4;</td><td>therefore</td></tr>
+<tr><td>&amp;#8764;</td><td>&amp;sim;</td><td>&sim;</td><td>varies with, similar to</td></tr>
+<tr><td>&amp;#8773;</td><td>&amp;cong;</td><td>&cong;</td><td>approximately equal to</td></tr>
+<tr><td>&amp;#8776;</td><td>&amp;asymp;</td><td>&asymp;</td><td>almost equal to, asymptotic to</td></tr>
+<tr><td>&amp;#8800;</td><td>&amp;ne;</td><td>&ne;</td><td>not equal to</td></tr>
+<tr><td>&amp;#8801;</td><td>&amp;equiv;</td><td>&equiv;</td><td>identical to</td></tr>
+<tr><td>&amp;#8804;</td><td>&amp;le;</td><td>&le;</td><td>less than or equal to</td></tr>
+<tr><td>&amp;#8805;</td><td>&amp;ge;</td><td>&ge;</td><td>greater than or equal to</td></tr>
+<tr><td>&amp;#8834;</td><td>&amp;sub;</td><td>&sub;</td><td>subset of</td></tr>
+<tr><td>&amp;#8835;</td><td>&amp;sup;</td><td>&sup;</td><td>superset of</td></tr>
+<tr><td>&amp;#8836;</td><td>&amp;nsub;</td><td>&nsub;</td><td>not a subset of</td></tr>
+<tr><td>&amp;#8838;</td><td>&amp;sube;</td><td>&sube;</td><td>subset of or equal to</td></tr>
+<tr><td>&amp;#8839;</td><td>&amp;supe;</td><td>&supe;</td><td>superset of or equal to</td></tr>
+<tr><td>&amp;#8853;</td><td>&amp;oplus;</td><td>&oplus;</td><td>circled plus, direct sum</td></tr>
+<tr><td>&amp;#8855;</td><td>&amp;otimes;</td><td>&otimes;</td><td>circled times, vector product</td></tr>
+<tr><td>&amp;#8869;</td><td>&amp;perp;</td><td>&perp;</td><td>orthagonal to, perpendicular</td></tr>
+<tr><td>&amp;#8901;</td><td>&amp;sdot;</td><td>&sdot;</td><td>dot operator</td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+<a id="misc"></a><h2>Miscellaneous Technical Symbols</h2>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr><th>code</th><th>name</th><th>render</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#8968;</td><td>&amp;lceil;</td><td>&lceil;</td><td>left ceiling</td></tr>
+<tr><td>&amp;#8969;</td><td>&amp;rceil;</td><td>&rceil;</td><td>right ceiling</td></tr>
+<tr><td>&amp;#8970;</td><td>&amp;lfloor;</td><td>&lfloor;</td><td>left floor</td></tr>
+<tr><td>&amp;#8971;</td><td>&amp;rfloor;</td><td>&rfloor;</td><td>right floor</td></tr>
+<tr><td>&amp;#9001;</td><td>&amp;lang;</td><td>&lang;</td><td>left angle bracket</td></tr>
+<tr><td>&amp;#9002;</td><td>&amp;rang;</td><td>&rang;</td><td>right angle bracket</td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+<a id="misc2"></a><h2>Miscellaneous Characters</h2>
+
+<table>
+<col class="e"><col class="z"><col class="d"><col class="v">
+<thead>
+<tr><th>code</th><th>name</th><th>render</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#9674;</td><td>&amp;loz;</td><td>&loz;</td><td>lozenge</td></tr>
+<tr><td>&amp;#9824;</td><td>&amp;spades;</td><td>&spades;</td><td>spade</td></tr>
+<tr><td>&amp;#9827;</td><td>&amp;clubs;</td><td>&clubs;</td><td>club</td></tr>
+<tr><td>&amp;#9829;</td><td>&amp;hearts;</td><td>&hearts;</td><td>heart</td></tr>
+<tr><td>&amp;#9830;</td><td>&amp;diams;</td><td>&diams;</td><td>diamond</td></tr>
+<tr class="topcont"><td colspan="4"><a href="#top" class="top">top</a></td></tr>
+</tbody>
+</table>
+
+		</div>
+
+	</body>
+
+</html>
