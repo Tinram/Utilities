@@ -40,7 +40,9 @@
     *        sudo chmod 770 /var/www/html/uploader/
     *        mv uploader.php index.php
     *        mv index.php /var/www/html/uploader/
-    *       (ensure port 80 is open to local network on host server)
+    *
+    *        (.ini: post_max_size, upload_max_filesize)
+    *        ensure port 80 is open to local network on host server
     *
     * @author         Martin Latter <copysense.co.uk>
     * @copyright      Martin Latter 09/12/2017
@@ -50,7 +52,7 @@
 */
 
 
-define('MAX_UPLOAD', 2000000); # close to PHP default, change 'upload_max_filesize' in php.ini
+define('MAX_UPLOAD', 2000000);
 
 ?>
 
