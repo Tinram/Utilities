@@ -46,7 +46,7 @@
     *
     * @author         Martin Latter <copysense.co.uk>
     * @copyright      Martin Latter 09/12/2017
-    * @version        0.02
+    * @version        0.03
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
     * @link           https://github.com/Tinram/utilities.git
 */
@@ -56,7 +56,7 @@ define('MAX_UPLOAD', 2000000);
 
 ?>
 
-        <h1>Upload file to <em><?php echo system('hostname'); ?></em></h1>
+        <h1>Upload file to <em><?php $sHostname = exec('hostname'); echo (!empty($sHostname) ? $sHostname : 'this server'); ?></em></h1>
 
         <form id="uploader" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars(strip_tags($_SERVER['PHP_SELF']), ENT_QUOTES, 'UTF-8'); ?>">
             <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_UPLOAD; ?>">
@@ -67,16 +67,17 @@ define('MAX_UPLOAD', 2000000);
 
 <?php
 
-$bSubmitted = (isset($_POST['upload_check'])) ? TRUE : FALSE;
+$bSubmitted = (isset($_POST['upload_check'])) ? true : false;
 
 
 if ($bSubmitted)
 {
-    filenameCheck();
-
-    if (fileUpload())
+    if (filenameCheck())
     {
-        echo '<p class="success">\'' . $_FILES['upfile']['name'] . '\' uploaded.</p>';
+        if (fileUpload())
+        {
+            echo '<p class="success">\'' . $_FILES['upfile']['name'] . '\' uploaded.</p>';
+        }
     }
 }
 
@@ -84,14 +85,18 @@ if ($bSubmitted)
 function filenameCheck()
 {
     $sFileattName = $_FILES['upfile']['name'];
-    $bFileFlag = FALSE;
+    $bFileFlag = false;
 
     $reBadName = '/[+\*\?:|\\\\\/"<>@;=#\{\}`%\^\$&]/';
     $bBadNameFlag = preg_match($reBadName, $sFileattName);
 
     if ($bBadNameFlag)
     {
-        die('<p class="error">That\'s a very bad filename.</p>');
+        echo '<p class="error">That\'s a very bad filename.</p>';
+        return false;
+    }
+    else {
+        return true;
     }
 }
 
@@ -104,38 +109,38 @@ function fileUpload()
     if ($_FILES['upfile']['size'] > MAX_UPLOAD)
     {
         echo '<p class="error">File exceeds filesize limit.</p>';
-        return FALSE;
+        return false;
     }
     else if (($_FILES['upfile']['error'] === UPLOAD_ERR_INI_SIZE) || ($_FILES['upfile']['error'] === UPLOAD_ERR_FORM_SIZE))
     {
         echo '<p class="error">File is too large.</p>';
-        return FALSE;
+        return false;
     }
     else if ($_FILES['upfile']['error'] === UPLOAD_ERR_PARTIAL)
     {
         echo '<p class="error">File upload was interrupted.</p>';
-        return FALSE;
+        return false;
     }
     else if ($_FILES['upfile']['error'] === UPLOAD_ERR_NO_FILE)
     {
         echo '<p class="error">No file was uploaded.</p>';
-        return FALSE;
+        return false;
     }
     else if ($_FILES['upfile']['error'] === UPLOAD_ERR_CANT_WRITE)
     {
         echo '<p class="error">Server cannot write to the tmp/ directory.</p>';
-        return FALSE;
+        return false;
     }
     else if ($_FILES['upfile']['error'] === UPLOAD_ERR_OK)
     {
         if ( ! move_uploaded_file($_FILES['upfile']['tmp_name'], $sDestinationDir))
         {
             echo '<p class="error">Could not the save file in the server directory.</p>';
-            return FALSE;
+            return false;
         }
         else
         {
-            return TRUE;
+            return true;
         }
     }
 }
