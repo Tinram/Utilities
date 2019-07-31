@@ -8,7 +8,7 @@
 
         <title>Uploader</title>
 
-        <style type="text/css">
+        <style>
             html * {margin:0; padding:0;}
             body {margin:3em; font:0.9em/1.5 Sans,FreeSans,verdana,sans-serif; background:#fff; color:#000;}
             h1 {font-size:1em; margin-bottom:30px;}
@@ -46,7 +46,7 @@
     *
     * @author         Martin Latter <copysense.co.uk>
     * @copyright      Martin Latter 09/12/2017
-    * @version        0.03
+    * @version        0.04
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
     * @link           https://github.com/Tinram/utilities.git
 */
