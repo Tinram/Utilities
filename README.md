@@ -5,7 +5,7 @@
 
 
 utility | description|
----- | ---- |
+:--- | :--- |
 [base64 converter](https://tinram.github.io/base64_converter.html) | encode and decode with Base64 |
 [chmod](https://tinram.github.io/chmod.html) | simple calculation of Linux file permissions |
 file_utils.php | file character replacement &ndash; convert line endings, remove whitespace etc

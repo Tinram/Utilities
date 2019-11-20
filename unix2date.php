@@ -9,7 +9,7 @@
     * Usage:
     *        php unix2date.php <timestamp>
     *
-    * @author         Martin Latter <copysense.co.uk>
+    * @author         Martin Latter
     * @copyright      Martin Latter 26/06/2018
     * @version        0.02
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html

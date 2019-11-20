@@ -9,7 +9,7 @@
     * Usage:
     *        php file_utils.php <filename>
     *
-    * @author         Martin Latter <copysense.co.uk>
+    * @author         Martin Latter
     * @copyright      Martin Latter 01/04/2013
     * @version        0.04
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html

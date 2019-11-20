@@ -44,7 +44,7 @@
     *        (.ini: post_max_size, upload_max_filesize)
     *        ensure port 80 is open to local network on host server
     *
-    * @author         Martin Latter <copysense.co.uk>
+    * @author         Martin Latter
     * @copyright      Martin Latter 09/12/2017
     * @version        0.04
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
