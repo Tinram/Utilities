@@ -48,7 +48,7 @@
     * @copyright      Martin Latter 09/12/2017
     * @version        0.04
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
-    * @link           https://github.com/Tinram/utilities.git
+    * @link           https://github.com/Tinram/Utilities.git
 */
 
 
