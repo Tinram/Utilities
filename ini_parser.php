@@ -5,7 +5,7 @@
     * Parse php.ini files (CLI / Apache) for active settings.
     *
     * Usage:
-    *        php ini_parser <file> | [-l]
+    *        php ini_parser.php <file> | [-l]
     *
     * @author         Martin Latter
     * @copyright      Martin Latter 23/11/2019

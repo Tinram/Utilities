@@ -7,7 +7,7 @@
     * Meld provides a nice GUI dir diff, yet I needed something quick and simple in the terminal.
     *
     * Usage:
-    *        php diff_dir <filename|filehash> <dir1> <dir2>
+    *        php diff_dir.php <filename|filehash> <dir1> <dir2>
     *
     * @author         Martin Latter
     * @copyright      Martin Latter 26/12/2019
