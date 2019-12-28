@@ -8,6 +8,7 @@ utility | description|
 :--- | :--- |
 [base64 converter](https://tinram.github.io/base64_converter.html) | encode and decode with Base64 |
 [chmod](https://tinram.github.io/chmod.html) | simple calculation display of Linux file permissions |
+diff_dir.php | diff directory differences &ndash; filenames or file content |
 [entities](https://tinram.github.io/entities.html) | HTML entities list |
 file_utils.php | file character replacement &ndash; convert line endings, remove whitespace |
 ini_parser.php | parse PHP .ini files for active settings |
