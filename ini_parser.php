@@ -9,11 +9,13 @@
     *
     * @author         Martin Latter
     * @copyright      Martin Latter 23/11/2019
-    * @version        0.01
+    * @version        0.02
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
     * @link           https://github.com/Tinram/Utilities.git
 */
 
+
+declare(strict_types=1);
 
 define('DUB_EOL', PHP_EOL . PHP_EOL);
 
@@ -36,13 +38,23 @@ if ($_SERVER['argv'][1] === '-l')
     exit;
 }
 
+if (( ! is_file($_SERVER['argv'][1])) || ( ! file_exists($_SERVER['argv'][1])))
+{
+    die('The file ' . $_SERVER['argv'][1] . ' does not exist!' . PHP_EOL);
+}
+
 $aSettings = parse_ini_file($_SERVER['argv'][1]);
+
+if ($aSettings === false)
+{
+    die('.ini file could not be parsed!' . PHP_EOL);
+}
 
 echo PHP_EOL;
 
 foreach ($aSettings as $k => $v)
 {
-    if (empty($v)) {continue;}
+    if ($v === '') {continue;}
 
     echo ' ' . $k . ' : ' . $v . PHP_EOL;
 }
