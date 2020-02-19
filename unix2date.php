@@ -11,11 +11,13 @@
     *
     * @author         Martin Latter
     * @copyright      Martin Latter 26/06/2018
-    * @version        0.02
+    * @version        0.03
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
     * @link           https://github.com/Tinram/Utilities.git
 */
 
+
+declare(strict_types=1);
 
 define('DUB_EOL', PHP_EOL . PHP_EOL);
 
@@ -31,7 +33,7 @@ if ( ! isset($_SERVER['argv'][1]))
 
 $iTS = abs((int) $_SERVER['argv'][1]);
 
-if ( ! $iTS)
+if ($iTS > 0)
 {
     echo PHP_EOL . ' timestamp is not a number!' . PHP_EOL;
     die($sUsage);
