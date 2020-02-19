@@ -11,11 +11,13 @@
     *
     * @author         Martin Latter
     * @copyright      Martin Latter 01/04/2013
-    * @version        0.04
+    * @version        0.05
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
     * @link           https://github.com/Tinram/Utilities.git
 */
 
+
+declare(strict_types=1);
 
 define('DUB_EOL', PHP_EOL . PHP_EOL);
 
@@ -40,7 +42,7 @@ $sAction = strtolower($_SERVER['argv'][1]);
 
 $sContents = file_get_contents($sFilename);
 
-if ( ! $sContents)
+if ($sContents === false)
 {
     die(PHP_EOL . " Error reading file: '$sFilename'" . DUB_EOL);
 }
@@ -92,7 +94,7 @@ switch ($sAction)
 $iF = file_put_contents($sFilename, $sContents);
 
 
-if ( ! $iF)
+if ($iF === false)
 {
     die(PHP_EOL . " '$sFilename' could not be processed." . DUB_EOL);
 }
