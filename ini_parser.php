@@ -9,7 +9,7 @@
     *
     * @author         Martin Latter
     * @copyright      Martin Latter 23/11/2019
-    * @version        0.02
+    * @version        0.03
     * @license        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
     * @link           https://github.com/Tinram/Utilities.git
 */
@@ -29,7 +29,9 @@ if ( ! isset($_SERVER['argv'][1]))
     die($sUsage);
 }
 
-if ($_SERVER['argv'][1] === '-l')
+$sFilename = $_SERVER['argv'][1];
+
+if ($sFilename === '-l')
 {
     echo ' ---- CLI ----' . PHP_EOL;
     system('php --ini');
@@ -38,12 +40,12 @@ if ($_SERVER['argv'][1] === '-l')
     exit;
 }
 
-if (( ! is_file($_SERVER['argv'][1])) || ( ! file_exists($_SERVER['argv'][1])))
+if (( ! is_file($sFilename)) || ( ! file_exists($sFilename)))
 {
-    die('The file ' . $_SERVER['argv'][1] . ' does not exist!' . PHP_EOL);
+    die('The file ' . $sFilename . ' does not exist!' . PHP_EOL);
 }
 
-$aSettings = parse_ini_file($_SERVER['argv'][1]);
+$aSettings = parse_ini_file($sFilename);
 
 if ($aSettings === false)
 {
